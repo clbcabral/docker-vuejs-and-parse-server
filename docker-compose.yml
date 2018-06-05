@@ -1,0 +1,52 @@
+version: '3'
+services: 
+  parse-server:
+    image: parseplatform/parse-server
+    container_name: z_parse_server
+    volumes: 
+      - './docker/builds/parse/config/:/parse-server/config/'
+      - './docker/builds/parse/cloud/:/parse-server/cloud/'
+      - '/etc/localtime:/etc/localtime:ro'
+    depends_on: 
+      - mongo
+    ports: 
+      - '1337:1337'
+    command: /parse-server/config/config.json
+    env_file: './.env'
+  parse-dashboard:
+    image: parseplatform/parse-dashboard
+    container_name: z_parse_dashboard
+    volumes: 
+      - '/etc/localtime:/etc/localtime:ro'
+    depends_on: 
+      - parse-server
+    ports: 
+      - '4040:4040'
+    environment:
+      PORT: 4040
+    env_file: './.env'
+  mongo:
+    image: mongo
+    container_name: z_mongo
+    volumes: 
+      - './docker/volumes/mongo:/data/db'
+      - '/etc/localtime:/etc/localtime:ro'
+    env_file: './.env'
+  web:
+    build: .
+    container_name: z_web
+    env_file: './.env'
+    volumes:
+      - dist:/webapp/dist
+  nginx:
+    image: nginx
+    container_name: z_nginx
+    ports: 
+      - '80:80'
+    volumes: 
+      - './docker/builds/nginx/default.conf:/etc/nginx/conf.d/default.conf'
+      - dist:/webapp/dist
+    env_file: './.env'
+
+volumes:
+  dist:

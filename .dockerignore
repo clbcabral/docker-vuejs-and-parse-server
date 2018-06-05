@@ -1,0 +1,6 @@
+bin
+docker/*
+test
+features
+dist
+node_modules/*

@@ -1,0 +1,9 @@
+{
+  "maxUploadSize": "20mb",
+  "customPages": { 
+    "choosePassword": "z.com/password-reset", 
+    "invalidLink": "z.com/expired", 
+    "passwordResetSuccess": "z.com/password-success", 
+    "verifyEmailSuccess": "z.com/verify-success"
+  }
+}
