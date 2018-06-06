@@ -1,19 +1,12 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="container">
     <router-view/>
   </div>
 </template>
 
 <script>
-import Parse from 'parse'
 export default {
-  name: 'App',
-  mounted () {
-    Parse.User.logIn('fulano@email.com', '123')
-      .then(console.log)
-      .fail(console.log)
-  }
+  name: 'App'
 }
 </script>
 
