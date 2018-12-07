@@ -23,3 +23,7 @@ Test on [http://localhost:80](http://localhost:80).
 Parse dashboard is also avaliable on port [http://localhost:4040](http://localhost:4040)
 
 Enjoy it!
+
+## License
+
+The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
