@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/clbcabral/docker-vuejs-and-parse-server/tree/master.svg?style=svg)](https://circleci.com/gh/clbcabral/docker-vuejs-and-parse-server/tree/master)
+
 # Simple VueJS + Parse Server + Parse Dashboard + Mongo, on Docker containers.
 
 Here we have a simple VueJS application that is using Parse Server as an API server. Following Parse Server, are Parse Dashboard and MongoDB. Everything is contained in a docker-compose project to enhance the setup.
